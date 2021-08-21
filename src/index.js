@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './index.css';
+import { createTheme, ThemeProvider } from "@material-ui/core";
+import 'typeface-roboto';
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ff8f00"
+    }, secondary: { main: "#ffcc80" }
+  }, fontFamily: "Roboto"
+});
 
+ReactDOM.render(<ThemeProvider theme={theme}><App /></ThemeProvider>, document.getElementById("root"));
